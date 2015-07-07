@@ -47,8 +47,8 @@ A number of filters are pre-defined:
 - ````InflateFilter````
 - ````SerializeFilter````
 - ````DeserializeFilter````
-- ````SplitHeaderFilter````
-- ````UnsplitHeaderFilter````
+- ````MultiplexFilter````
+- ````DemultiplexFilter````
 - ````ProcFilter````
 - ````Collector````
 
