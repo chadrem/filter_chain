@@ -20,8 +20,8 @@ Or install it yourself as:
 
 A ````Chain```` is a container for a set of filters and makes it easy to create them and retrieve the results.
 
-The constructor takes a schema that defines a set of filters you want to use.
-The below example serializes objects to JSON, compresses them, prints their new byte size, and collects the results for future retrieval:
+The constructor takes a schema that defines the set of filters you want to use.
+The below example serializes each input object to a JSON string, compresses the strings, prints the byte size of each string, and collects the results for future retrieval:
 
     chain = FilterChain::Chain.new(:filters => [
       {:class => FilterChain::SerializeFilter, :opts => {:format => :json}},
@@ -40,7 +40,7 @@ The below example serializes objects to JSON, compresses them, prints their new 
 
 ## Filters
 
-A ````Filter```` is an object that takes an input and passes it's output to the next link in a chain of ````Filter```` objects.
+A ````Filter```` is an object that takes an input and passes it's output to the next link in a chain of filters.
 A number of filters are pre-defined:
 
 - ````DeflateFilter````
@@ -57,7 +57,7 @@ You can easily create your own filters by inheriting from the ````Filter```` cla
 - ````on_initialize````
 - ````on_input(data)````
 
-You pass data to the next filter by calling the ````pass``` method in your ````on_input```` method.
+You pass data to the next filter by calling the ````pass```` method in your ````on_input```` method.
 
 ## Collectors
 
