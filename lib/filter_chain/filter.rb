@@ -15,6 +15,12 @@ module FilterChain
       nil
     end
 
+    def pass(data)
+      raise NextFilterMissing unless next_filter
+      
+      next_filter.input(data)
+    end
+
     private
 
     #
@@ -26,16 +32,6 @@ module FilterChain
 
     def on_input(data)
       pass(data)
-    end
-
-    #
-    # Helper methods.
-    #
-
-    def pass(data)
-      raise NextFilterMissing unless next_filter
-      
-      next_filter.input(data)
     end
   end
 end
