@@ -1,5 +1,7 @@
 # Filter Chain
 
+[![Build Status](https://travis-ci.org/chadrem/filter_chain.svg)](https://travis-ci.org/chadrem/filter_chain)
+
 Filter Chain is a Ruby gem for processing data through a chain of filters in an object oriented style.
 
 ## Installation
