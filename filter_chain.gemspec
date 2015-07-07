@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["chad@remesch.com"]
 
   spec.summary       = %q{Object oriented filter chain and filter collection.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/chadrem/filter_chain"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
