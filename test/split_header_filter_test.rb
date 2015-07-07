@@ -1,8 +1,8 @@
 require "test_helper"
 
-class SplitFilterTest < MiniTest::Test
+class SplitHeaderFilterTest < MiniTest::Test
   def test_input
-    filter = FilterChain::SplitFilter.new
+    filter = FilterChain::SplitHeaderFilter.new
     def filter.pass(data)
       @result = data
     end

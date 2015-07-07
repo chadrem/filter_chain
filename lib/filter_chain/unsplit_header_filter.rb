@@ -1,5 +1,5 @@
 module FilterChain
-  class UnsplitFilter < Filter
+  class UnsplitHeaderFilter < Filter
     private
 
     def on_initialize

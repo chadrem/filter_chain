@@ -1,8 +1,8 @@
 require "test_helper"
 
-class UnsplitFilterTest < MiniTest::Test
+class UnsplitHeaderFilterTest < MiniTest::Test
   def test_input
-    filter = FilterChain::UnsplitFilter.new
+    filter = FilterChain::UnsplitHeaderFilter.new
     def filter.pass(data)
       (@result ||= []) << data
     end

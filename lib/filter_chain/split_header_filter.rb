@@ -1,5 +1,5 @@
 module FilterChain
-  class SplitFilter < Filter
+  class SplitHeaderFilter < Filter
     private
 
     def on_initialize
