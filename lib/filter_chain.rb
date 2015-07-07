@@ -9,8 +9,8 @@ require "filter_chain/filter"
 require "filter_chain/serialize_filter"
 require "filter_chain/deserialize_filter"
 
-require "filter_chain/split_header_filter"
-require "filter_chain/unsplit_header_filter"
+require "filter_chain/multiplex_filter"
+require "filter_chain/demultiplex_filter"
 
 require "filter_chain/deflate_filter"
 require "filter_chain/inflate_filter"
