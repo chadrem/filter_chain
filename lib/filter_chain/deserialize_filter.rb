@@ -11,7 +11,7 @@ module FilterChain
     def on_input(data)
       result = case opts[:format]
       when :json
-        JSON.parse(data)
+        JSON.load(data)
       when :marshal
         Marshal.load(data)
       else

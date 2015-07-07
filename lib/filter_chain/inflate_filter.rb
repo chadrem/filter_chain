@@ -1,12 +1,12 @@
 module FilterChain
-  class SplitFilter < Filter
+  class InflateFilter < Filter
     private
 
     def on_initialize
     end
 
     def on_input(data)
-      result = [data.respond_to?(:bytesize) ? data.bytesize : data.size, data].pack('Na*')
+      result = Zlib::Inflate.inflate(data)
 
       pass(result)
     end

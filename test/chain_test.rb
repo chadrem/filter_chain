@@ -1,7 +1,7 @@
 require "test_helper"
 
 class ChainTest < Minitest::Test
-  def test_basic_usage
+  def test_input
 
     chain = FilterChain::Chain.new(
       :filters => [
