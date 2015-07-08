@@ -18,6 +18,8 @@ module FilterChain
 
     def <<(data)
       @filters.first << data
+
+      nil
     end
 
     def output
