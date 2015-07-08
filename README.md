@@ -28,12 +28,12 @@ The below example serializes each input object to a JSON string, compresses the 
 
       c.add(FilterChain::DeflateFilter.new)
 
-      c.add(FilterChain::ProcFilter.new do |data|
+      c.add(FilterChain::ProcFilter.new { |data|
         puts "Byte size: #{data.bytesize}"
         data
-      end)
+      })
 
-      c.add FilterChain::Collector.new
+      c.add(FilterChain::Collector.new)
     end
 
     chain << "Hello world"
