@@ -23,7 +23,7 @@ A ````Chain```` is a container for a set of filters and makes it easy to create 
 The constructor takes a schema that defines the set of filters you want to use.
 The below example serializes each input object to a JSON string, compresses the strings, prints the byte size of each string, and collects the results for future retrieval:
 
-    chain = FilterChain::Chain.new do |c|
+    chain = FilterChain::Chain.new { |c|
       c.add(FilterChain::SerializeFilter.new(:format => :json))
 
       c.add(FilterChain::DeflateFilter.new)
@@ -34,7 +34,7 @@ The below example serializes each input object to a JSON string, compresses the 
       })
 
       c.add(FilterChain::Collector.new)
-    end
+    }
 
     chain << "Hello world"
     chain << "How are you?"
