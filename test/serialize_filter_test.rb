@@ -7,7 +7,7 @@ class SerializeFilterTest < MiniTest::Test
       @result = data
     end
 
-    filter.input({"foo" => "bar"})
+    filter << {"foo" => "bar"}
 
     assert_equal("{\"foo\":\"bar\"}", filter.instance_variable_get("@result"))
   end
@@ -18,7 +18,7 @@ class SerializeFilterTest < MiniTest::Test
       @result = data
     end
 
-    filter.input({"foo" => "bar"})
+    filter << {"foo" => "bar"}
 
     assert_equal("\x04\b{\x06I\"\bfoo\x06:\x06ETI\"\bbar\x06;\x00T", filter.instance_variable_get("@result"))
   end

@@ -26,7 +26,7 @@ module FilterChain
     end
 
     def raise_unknown_format
-      raise FilterChainError, "Unknown format:#{opts[:format]}"
+      raise UnknownFormatError, "Unknown format:#{opts[:format]}"
     end
   end
 end

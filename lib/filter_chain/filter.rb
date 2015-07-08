@@ -1,24 +1,26 @@
 module FilterChain
   class Filter
     attr_reader :opts
+    attr_reader :block
     
     attr_accessor :next_filter
 
-    def initialize(opts = {})
+    def initialize(opts = {}, &block)
       @opts = opts
+      @block = block
       on_initialize
     end
 
-    def input(data)
+    def <<(data)
       on_input(data)
       
       nil
     end
 
     def pass(data)
-      raise NextFilterMissing unless next_filter
+      raise NextFilterMissingError unless next_filter
       
-      next_filter.input(data)
+      next_filter << data
     end
 
     private

@@ -7,7 +7,7 @@ class DeserializationFilterTest < MiniTest::Test
       @result = data
     end
 
-    filter.input(JSON.dump({"foo" => "bar"}))
+    filter << JSON.dump({"foo" => "bar"})
 
     assert_equal({"foo" => "bar"}, filter.instance_variable_get("@result"))
   end
@@ -18,7 +18,7 @@ class DeserializationFilterTest < MiniTest::Test
       @result = data
     end
 
-    filter.input(Marshal.dump({"foo" => "bar"}))
+    filter << Marshal.dump({"foo" => "bar"})
 
     assert_equal({"foo" => "bar"}, filter.instance_variable_get("@result"))
   end

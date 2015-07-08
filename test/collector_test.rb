@@ -6,7 +6,7 @@ class CollectorTest < MiniTest::Test
 
     assert_equal(0, collector.collection.length)
 
-    collector.input("foo")
+    collector << "foo"
 
     assert_equal(1, collector.collection.length)
   end

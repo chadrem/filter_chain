@@ -23,18 +23,21 @@ A ````Chain```` is a container for a set of filters and makes it easy to create 
 The constructor takes a schema that defines the set of filters you want to use.
 The below example serializes each input object to a JSON string, compresses the strings, prints the byte size of each string, and collects the results for future retrieval:
 
-    chain = FilterChain::Chain.new(:filters => [
-      {:class => FilterChain::SerializeFilter, :opts => {:format => :json}},
-      {:class => FilterChain::DeflateFilter},
-      {:class => FilterChain::ProcFilter, :opts => {:proc => proc { |data|
+    chain = FilterChain::Chain.new do |c|
+      c.add(FilterChain::SerializeFilter.new(:format => :json))
+
+      c.add(FilterChain::DeflateFilter.new)
+
+      c.add(FilterChain::ProcFilter.new do |data|
         puts "Byte size: #{data.bytesize}"
         data
-      }}},
-      {:class => FilterChain::Collector}
-    ])
+      end)
 
-    chain.input("Hello world")
-    chain.input("How are you?")
+      c.add FilterChain::Collector.new
+    end
+
+    chain << "Hello world"
+    chain << "How are you?"
 
     puts chain.output.inspect
 
@@ -62,8 +65,12 @@ You pass data to the next filter by calling the ````pass```` method in your ````
 ## Collectors
 
 A ````Collector```` is a specialized filter designed to be the last link in a chain.
-Typically, all chains should end in a collector.
+All chains should end in a collector or terminator.
 An array based collector is included, but you can easily define custom collectors using other data structures.
+
+## Terminators
+
+A ````Terminator```` takes the place of a collector when you want your chain to run a block of code at the end of the chain.
 
 ## Contributing
 

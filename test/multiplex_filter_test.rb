@@ -7,7 +7,7 @@ class MultiplexFilterTest < MiniTest::Test
       @result = data
     end
 
-    filter.input("foo")
+    filter << "foo"
 
     assert_equal("\x00\x00\x00\x03foo", filter.instance_variable_get("@result"))
   end

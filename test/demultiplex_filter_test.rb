@@ -7,11 +7,11 @@ class DemultiplexFilterTest < MiniTest::Test
       (@result ||= []) << data
     end
 
-    filter.input("\x00")
-    filter.input("\x00\x00")
-    filter.input("\x03fo")
-    filter.input("o")
-    filter.input("\x00\x00\x00\x03bar")
+    filter << "\x00"
+    filter << "\x00\x00"
+    filter << "\x03fo"
+    filter << "o"
+    filter << "\x00\x00\x00\x03bar"
 
     assert_equal(["foo", "bar"], filter.instance_variable_get("@result"))
   end

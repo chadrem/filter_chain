@@ -19,5 +19,7 @@ require "filter_chain/proc_filter"
 
 require "filter_chain/collector"
 
+require "filter_chain/terminator"
+
 module FilterChain
 end

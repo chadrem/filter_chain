@@ -7,7 +7,7 @@ class InflateFilterTest < MiniTest::Test
       @result = data
     end
 
-    filter.input(Zlib::Deflate.deflate("foofoofoo"))
+    filter << Zlib::Deflate.deflate("foofoofoo")
 
     assert_equal("foofoofoo", filter.instance_variable_get("@result"))
   end

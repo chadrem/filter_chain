@@ -7,7 +7,7 @@ class FilterTest < MiniTest::Test
       @result = data
     end
 
-    filter.input("foo")
+    filter << "foo"
 
     assert_equal("foo", filter.instance_variable_get("@result"))
   end
