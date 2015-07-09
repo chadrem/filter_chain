@@ -18,9 +18,8 @@ Or install it yourself as:
 
 ## Chains
 
-A ````Chain```` is a container for a set of filters and makes it easy to create them and retrieve the results.
+A ````Chain```` is a container for a set of filters. 
 
-The constructor takes a schema that defines the set of filters you want to use.
 The below example serializes each input object to a JSON string, compresses the strings, prints the byte size of each string, and collects the results for future retrieval:
 
     chain = FilterChain::Chain.new { |c|
