@@ -53,6 +53,7 @@ A number of filters are pre-defined:
 - ````DemultiplexFilter````
 - ````ProcFilter````
 - ````Collector````
+- ````Terminator````
 
 You can easily create your own filters by inheriting from the ````Filter```` class and overriding the following handlers:
 
@@ -79,4 +80,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/chadre
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
