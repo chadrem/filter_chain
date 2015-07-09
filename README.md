@@ -65,12 +65,11 @@ You pass data to the next filter by calling the ````pass```` method in your ````
 ## Collectors
 
 A ````Collector```` is a specialized filter designed to be the last link in a chain.
-All chains should end in a collector or terminator.
 An array based collector is included, but you can easily define custom collectors using other data structures.
 
 ## Terminators
 
-A ````Terminator```` takes the place of a collector when you want your chain to run a block of code at the end of the chain.
+A ````Terminator```` takes the place of a collector when you want your last link to run a block of code. 
 
 ## Contributing
 
