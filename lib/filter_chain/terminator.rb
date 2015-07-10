@@ -8,6 +8,7 @@ module FilterChain
 
     def on_input(data)
       block.call(data)
+
       data
     end
   end
