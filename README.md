@@ -1,4 +1,4 @@
-# Filter Chain [![Build Status](https://travis-ci.org/chadrem/filter_chain.svg)](https://travis-ci.org/chadrem/filter_chain)
+# Filter Chain [![Build Status](https://travis-ci.org/chadrem/filter_chain.svg)](https://travis-ci.org/chadrem/filter_chain) [![Coverage Status](https://coveralls.io/repos/chadrem/filter_chain/badge.svg?branch=master&service=github)](https://coveralls.io/github/chadrem/filter_chain?branch=master)
 
 Filter Chain is a Ruby gem for processing data through a chain of filters in an object oriented style.
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Chains
 
-A ````Chain```` is a container for a set of filters. 
+A ````Chain```` is a container for a set of filters.
 
 The below example serializes each input object to a JSON string, compresses the strings, prints the byte size of each string, and collects the results for future retrieval:
 
@@ -69,7 +69,7 @@ An array based collector is included, but you can easily define custom collector
 
 ## Terminators
 
-A ````Terminator```` takes the place of a collector when you want your last link to run a block of code. 
+A ````Terminator```` takes the place of a collector when you want your last link to run a block of code.
 
 ## Contributing
 
