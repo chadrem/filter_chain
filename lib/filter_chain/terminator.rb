@@ -7,7 +7,8 @@ module FilterChain
     end
 
     def on_input(data)
-      result = block.call(data)
+      block.call(data)
+      data
     end
   end
 end

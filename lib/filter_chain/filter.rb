@@ -13,14 +13,10 @@ module FilterChain
 
     def <<(data)
       on_input(data)
-      
-      nil
     end
 
     def pass(data)
-      raise NextFilterMissingError unless next_filter
-      
-      next_filter << data
+      next_filter ? next_filter << data : data
     end
 
     private
